@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Decent Restaurant | Your Feedback Matters</title>
+  <title>Decent Restaurant | Feedback</title>
 
   <meta
     name="description"
-    content="Share your feedback with Decent Restaurant. Your suggestions help us improve our food and service."
-  />
+    content="Share your feedback with Decent Restaurant. Your feedback helps us improve."
+  >
 
   <style>
     * {
@@ -19,7 +19,14 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
       background: #f7f7f5;
       color: #1d1d1b;
       min-height: 100vh;
@@ -37,7 +44,9 @@
       max-width: 520px;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .header {
       text-align: center;
@@ -45,17 +54,22 @@
     }
 
     .logo {
-      width: 68px;
-      height: 68px;
+      width: 70px;
+      height: 70px;
       margin: 0 auto 16px;
+
       border-radius: 50%;
       background: #171717;
-      color: white;
+      color: #ffffff;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 25px;
       font-weight: 700;
+
       letter-spacing: -1px;
     }
 
@@ -68,18 +82,24 @@
 
     .tagline {
       margin-top: 7px;
-      color: #777;
+      color: #777777;
       font-size: 14px;
       line-height: 1.5;
     }
 
-    /* CARD */
+
+    /* =========================
+       MAIN CARD
+    ========================= */
 
     .card {
       background: #ffffff;
       border-radius: 22px;
-      padding: 26px 21px 28px;
-      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.07);
+
+      padding: 27px 21px 28px;
+
+      box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.07);
     }
 
     .intro {
@@ -98,7 +118,10 @@
       line-height: 1.55;
     }
 
-    /* FORM */
+
+    /* =========================
+       FORM
+    ========================= */
 
     .form-group {
       margin-bottom: 22px;
@@ -112,30 +135,38 @@
     }
 
     .optional {
-      color: #999;
-      font-weight: 400;
+      color: #999999;
       font-size: 12px;
+      font-weight: 400;
     }
 
     input,
     textarea {
       width: 100%;
+
       border: 1px solid #dededb;
-      background: #fafaf9;
       border-radius: 12px;
+
+      background: #fafaf9;
+
       padding: 14px;
-      font-size: 15px;
-      color: #222;
-      outline: none;
-      transition: 0.2s ease;
+
       font-family: inherit;
+      font-size: 15px;
+      color: #222222;
+
+      outline: none;
+
+      transition: 0.2s ease;
     }
 
     input:focus,
     textarea:focus {
-      border-color: #222;
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+      border-color: #222222;
+      background: #ffffff;
+
+      box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.05);
     }
 
     textarea {
@@ -144,7 +175,10 @@
       line-height: 1.5;
     }
 
-    /* EXPERIENCE */
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
 
     .experience-grid {
       display: grid;
@@ -164,45 +198,66 @@
 
     .experience-option label {
       margin: 0;
+
       min-height: 58px;
+
       border: 1px solid #dededb;
       border-radius: 12px;
+
       padding: 10px 8px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       cursor: pointer;
+
       background: #fafaf9;
+
       font-size: 13px;
       font-weight: 500;
+
       transition: all 0.2s ease;
     }
 
     .experience-option label:hover {
-      border-color: #999;
+      border-color: #999999;
     }
 
     .experience-option input:checked + label {
       background: #171717;
-      color: white;
+      color: #ffffff;
       border-color: #171717;
+
       transform: translateY(-1px);
     }
 
-    /* BUTTON */
+
+    /* =========================
+       SUBMIT BUTTON
+    ========================= */
 
     .submit-btn {
       width: 100%;
+
       border: none;
       border-radius: 13px;
+
       background: #171717;
-      color: white;
+      color: #ffffff;
+
       padding: 16px;
+
+      font-family: inherit;
       font-size: 15px;
       font-weight: 650;
+
       cursor: pointer;
+
       transition: 0.2s ease;
+
       margin-top: 3px;
     }
 
@@ -221,63 +276,91 @@
 
     .privacy-note {
       text-align: center;
-      color: #999;
+
+      color: #999999;
+
       font-size: 11px;
       line-height: 1.5;
+
       margin-top: 14px;
     }
 
-    /* THANK YOU */
+
+    /* =========================
+       THANK YOU
+    ========================= */
 
     .thank-you {
       display: none;
+
       text-align: center;
+
       padding: 28px 10px 15px;
     }
 
     .success-icon {
       width: 72px;
       height: 72px;
+
       border-radius: 50%;
+
       background: #171717;
-      color: white;
+      color: #ffffff;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       margin: 0 auto 20px;
+
       font-size: 32px;
     }
 
     .thank-you h2 {
       font-family: Georgia, "Times New Roman", serif;
+
       font-size: 27px;
+
       margin-bottom: 10px;
     }
 
     .thank-you p {
       color: #707070;
+
       font-size: 14px;
       line-height: 1.6;
     }
 
     .thank-you .small {
       margin-top: 17px;
+
       font-size: 12px;
-      color: #999;
+
+      color: #999999;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer {
       text-align: center;
+
       padding: 22px 5px 0;
-      color: #999;
+
+      color: #999999;
+
       font-size: 11px;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 380px) {
+
       .restaurant-name {
         font-size: 27px;
       }
@@ -289,9 +372,12 @@
       .experience-grid {
         grid-template-columns: 1fr;
       }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
@@ -299,7 +385,10 @@
 
     <main class="container">
 
-      <!-- HEADER -->
+
+      <!-- =========================
+           HEADER
+      ========================= -->
 
       <header class="header">
 
@@ -318,27 +407,53 @@
       </header>
 
 
-      <!-- MAIN CARD -->
+
+      <!-- =========================
+           CARD
+      ========================= -->
 
       <section class="card">
+
 
         <!-- FEEDBACK FORM -->
 
         <div id="feedbackSection">
 
           <div class="intro">
-            <h1>We'd love to hear from you.</h1>
+
+            <h1>
+              We'd love to hear from you.
+            </h1>
 
             <p>
               Your honest feedback helps us improve our food,
               service and overall dining experience.
             </p>
+
           </div>
 
 
-          <form id="feedbackForm">
 
-            <!-- NAME -->
+          <!--
+            IMPORTANT:
+
+            This form submits directly to your Google Form.
+
+            Google Form ID:
+            1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw
+          -->
+
+          <form
+            id="feedbackForm"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw/formResponse"
+            method="POST"
+            target="googleFormTarget"
+          >
+
+
+            <!-- =========================
+                 NAME
+            ========================= -->
 
             <div class="form-group">
 
@@ -353,35 +468,45 @@
                 placeholder="Enter your name"
                 autocomplete="name"
                 required
-              />
+              >
 
             </div>
 
 
-            <!-- MOBILE -->
+
+            <!-- =========================
+                 MOBILE
+            ========================= -->
 
             <div class="form-group">
 
               <label for="mobile">
+
                 Mobile Number
-                <span class="optional">(Optional)</span>
+
+                <span class="optional">
+                  (Optional)
+                </span>
+
               </label>
 
               <input
                 type="tel"
                 id="mobile"
                 name="entry.1148822029"
-                placeholder="Enter your mobile number"
+                placeholder="Enter your 10-digit mobile number"
                 inputmode="numeric"
                 autocomplete="tel"
                 maxlength="10"
-                pattern="[0-9]{10}"
-              />
+              >
 
             </div>
 
 
-            <!-- EXPERIENCE -->
+
+            <!-- =========================
+                 EXPERIENCE
+            ========================= -->
 
             <div class="form-group">
 
@@ -389,7 +514,11 @@
                 How was your overall experience?
               </label>
 
+
               <div class="experience-grid">
+
+
+                <!-- EXCELLENT -->
 
                 <div class="experience-option">
 
@@ -397,16 +526,19 @@
                     type="radio"
                     id="excellent"
                     name="entry.1422430894"
-                    value="⭐ Excellent"
+                    value="✨ Excellent"
                     required
-                  />
+                  >
 
                   <label for="excellent">
-                    ⭐ Excellent
+                    ✨ Excellent
                   </label>
 
                 </div>
 
+
+
+                <!-- GOOD -->
 
                 <div class="experience-option">
 
@@ -414,15 +546,18 @@
                     type="radio"
                     id="good"
                     name="entry.1422430894"
-                    value="👍 Good"
-                  />
+                    value="👍🏽 Good"
+                  >
 
                   <label for="good">
-                    👍 Good
+                    👍🏽 Good
                   </label>
 
                 </div>
 
+
+
+                <!-- AVERAGE -->
 
                 <div class="experience-option">
 
@@ -430,15 +565,18 @@
                     type="radio"
                     id="average"
                     name="entry.1422430894"
-                    value="😐 Average"
-                  />
+                    value="🙂 Average"
+                  >
 
                   <label for="average">
-                    😐 Average
+                    🙂 Average
                   </label>
 
                 </div>
 
+
+
+                <!-- POOR -->
 
                 <div class="experience-option">
 
@@ -446,11 +584,11 @@
                     type="radio"
                     id="poor"
                     name="entry.1422430894"
-                    value="👎 Poor"
-                  />
+                    value="👎🏽 Poor"
+                  >
 
                   <label for="poor">
-                    👎 Poor
+                    👎🏽 Poor
                   </label>
 
                 </div>
@@ -460,7 +598,10 @@
             </div>
 
 
-            <!-- SUGGESTION -->
+
+            <!-- =========================
+                 SUGGESTIONS / COMPLAINTS
+            ========================= -->
 
             <div class="form-group">
 
@@ -478,7 +619,10 @@
             </div>
 
 
-            <!-- SUBMIT -->
+
+            <!-- =========================
+                 SUBMIT
+            ========================= -->
 
             <button
               type="submit"
@@ -488,16 +632,22 @@
               Submit Feedback
             </button>
 
+
             <div class="privacy-note">
-              Your feedback is used only to help Decent Restaurant improve.
+              Your feedback is used only to help
+              Decent Restaurant improve.
             </div>
+
 
           </form>
 
         </div>
 
 
-        <!-- THANK YOU SCREEN -->
+
+        <!-- =========================
+             THANK YOU SCREEN
+        ========================= -->
 
         <div
           class="thank-you"
@@ -518,38 +668,50 @@
           </p>
 
           <p class="small">
-            Your feedback helps Decent Restaurant serve you better.
+            Your feedback helps Decent Restaurant
+            serve you better.
           </p>
 
         </div>
 
+
       </section>
 
+
+
+      <!-- FOOTER -->
 
       <footer class="footer">
         © Decent Restaurant
       </footer>
+
 
     </main>
 
   </div>
 
 
+
+  <!--
+    HIDDEN IFRAME
+
+    Google Forms loads its response here.
+    The customer never sees the Google Form.
+  -->
+
+  <iframe
+    name="googleFormTarget"
+    id="googleFormTarget"
+    style="display:none;"
+  ></iframe>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
-
-    /*
-      GOOGLE FORM CONNECTION
-
-      Your Google Form:
-      https://docs.google.com/forms/d/e/1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw/viewform
-
-      Responses are submitted to Google Forms using the
-      corresponding entry IDs from your form.
-    */
-
-    const GOOGLE_FORM_URL =
-      "https://docs.google.com/forms/d/e/1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw/formResponse";
-
 
     const form =
       document.getElementById("feedbackForm");
@@ -563,98 +725,142 @@
     const thankYou =
       document.getElementById("thankYou");
 
+    const googleFormTarget =
+      document.getElementById("googleFormTarget");
+
+
+    let submitted = false;
+
+
+    /*
+      FORM SUBMISSION
+    */
 
     form.addEventListener("submit", function(event) {
 
-      event.preventDefault();
-
 
       /*
-        Basic mobile number validation.
-        Since mobile number is optional, we only validate it
-        if the customer enters something.
+        Validate mobile number only if
+        the customer entered one.
       */
 
       const mobile =
-        document.getElementById("mobile").value.trim();
+        document
+          .getElementById("mobile")
+          .value
+          .trim();
 
-      if (mobile !== "" && !/^[0-9]{10}$/.test(mobile)) {
 
-        alert("Please enter a valid 10-digit mobile number.");
+      if (
+        mobile !== "" &&
+        !/^[0-9]{10}$/.test(mobile)
+      ) {
+
+        event.preventDefault();
+
+        alert(
+          "Please enter a valid 10-digit mobile number."
+        );
 
         return;
-
       }
 
 
       /*
-        Disable button so the customer cannot accidentally
-        submit multiple times.
+        Prevent duplicate submissions.
+      */
+
+      if (submitted) {
+
+        event.preventDefault();
+
+        return;
+      }
+
+
+      submitted = true;
+
+
+      /*
+        Change button state.
       */
 
       submitBtn.disabled = true;
 
-      submitBtn.textContent = "Sending...";
+      submitBtn.textContent =
+        "Sending...";
 
 
       /*
-        Create FormData from our custom form.
+        The browser now submits the form
+        naturally to Google Forms.
+
+        Because target="googleFormTarget",
+        the Google response loads into
+        the hidden iframe.
       */
-
-      const formData =
-        new FormData(form);
-
-
-      /*
-        Send the information directly to Google Forms.
-
-        "no-cors" is required because Google Forms is on
-        a different domain.
-      */
-
-      fetch(
-        GOOGLE_FORM_URL,
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: formData
-        }
-      )
-      .then(function() {
-
-        /*
-          Google Forms does not return a readable response
-          because of browser security.
-
-          Therefore, after the request is sent, we show
-          our own thank-you screen.
-        */
-
-        feedbackSection.style.display = "none";
-
-        thankYou.style.display = "block";
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-      })
-      .catch(function(error) {
-
-        console.error(error);
-
-        submitBtn.disabled = false;
-
-        submitBtn.textContent = "Submit Feedback";
-
-        alert(
-          "Something went wrong. Please check your internet connection and try again."
-        );
-
-      });
 
     });
+
+
+
+    /*
+      DETECT GOOGLE FORM RESPONSE
+    */
+
+    googleFormTarget.addEventListener(
+      "load",
+      function() {
+
+
+        /*
+          Ignore iframe loads that happen
+          before the form was submitted.
+        */
+
+        if (!submitted) {
+          return;
+        }
+
+
+        /*
+          Small delay gives Google Forms
+          time to process the response.
+        */
+
+        setTimeout(function() {
+
+
+          /*
+            Hide form.
+          */
+
+          feedbackSection.style.display =
+            "none";
+
+
+          /*
+            Show custom thank-you screen.
+          */
+
+          thankYou.style.display =
+            "block";
+
+
+          /*
+            Scroll to top.
+          */
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+
+        }, 500);
+
+      }
+    );
 
   </script>
 
