@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Decent Restaurant | Your Feedback Matters</title>
+
+  <meta
+    name="description"
+    content="Share your feedback with Decent Restaurant. Your suggestions help us improve our food and service."
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f7f5;
+      color: #1d1d1b;
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 40px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    /* HEADER */
+
+    .header {
+      text-align: center;
+      padding: 20px 10px 26px;
+    }
+
+    .logo {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #171717;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .restaurant-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .tagline {
+      margin-top: 7px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* CARD */
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 26px 21px 28px;
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.07);
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .intro h1 {
+      font-size: 23px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #707070;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* FORM */
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 650;
+      margin-bottom: 9px;
+    }
+
+    .optional {
+      color: #999;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #dededb;
+      background: #fafaf9;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 15px;
+      color: #222;
+      outline: none;
+      transition: 0.2s ease;
+      font-family: inherit;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #222;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .experience-option {
+      position: relative;
+    }
+
+    .experience-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .experience-option label {
+      margin: 0;
+      min-height: 58px;
+      border: 1px solid #dededb;
+      border-radius: 12px;
+      padding: 10px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      background: #fafaf9;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .experience-option label:hover {
+      border-color: #999;
+    }
+
+    .experience-option input:checked + label {
+      background: #171717;
+      color: white;
+      border-color: #171717;
+      transform: translateY(-1px);
+    }
+
+    /* BUTTON */
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 13px;
+      background: #171717;
+      color: white;
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 650;
+      cursor: pointer;
+      transition: 0.2s ease;
+      margin-top: 3px;
+    }
+
+    .submit-btn:hover {
+      background: #303030;
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .privacy-note {
+      text-align: center;
+      color: #999;
+      font-size: 11px;
+      line-height: 1.5;
+      margin-top: 14px;
+    }
+
+    /* THANK YOU */
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 28px 10px 15px;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #171717;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+    }
+
+    .thank-you h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .thank-you p {
+      color: #707070;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .thank-you .small {
+      margin-top: 17px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      text-align: center;
+      padding: 22px 5px 0;
+      color: #999;
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 380px) {
+      .restaurant-name {
+        font-size: 27px;
+      }
+
+      .card {
+        padding: 23px 17px 25px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <main class="container">
+
+      <!-- HEADER -->
+
+      <header class="header">
+
+        <div class="logo">
+          DR
+        </div>
+
+        <div class="restaurant-name">
+          Decent Restaurant
+        </div>
+
+        <div class="tagline">
+          Good food. Good service. Your feedback helps us do better.
+        </div>
+
+      </header>
+
+
+      <!-- MAIN CARD -->
+
+      <section class="card">
+
+        <!-- FEEDBACK FORM -->
+
+        <div id="feedbackSection">
+
+          <div class="intro">
+            <h1>We'd love to hear from you.</h1>
+
+            <p>
+              Your honest feedback helps us improve our food,
+              service and overall dining experience.
+            </p>
+          </div>
+
+
+          <form id="feedbackForm">
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+              <label for="name">
+                Your Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="entry.1244833671"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              />
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+              <label for="mobile">
+                Mobile Number
+                <span class="optional">(Optional)</span>
+              </label>
+
+              <input
+                type="tel"
+                id="mobile"
+                name="entry.1148822029"
+                placeholder="Enter your mobile number"
+                inputmode="numeric"
+                autocomplete="tel"
+                maxlength="10"
+                pattern="[0-9]{10}"
+              />
+
+            </div>
+
+
+            <!-- EXPERIENCE -->
+
+            <div class="form-group">
+
+              <label>
+                How was your overall experience?
+              </label>
+
+              <div class="experience-grid">
+
+                <div class="experience-option">
+
+                  <input
+                    type="radio"
+                    id="excellent"
+                    name="entry.1422430894"
+                    value="⭐ Excellent"
+                    required
+                  />
+
+                  <label for="excellent">
+                    ⭐ Excellent
+                  </label>
+
+                </div>
+
+
+                <div class="experience-option">
+
+                  <input
+                    type="radio"
+                    id="good"
+                    name="entry.1422430894"
+                    value="👍 Good"
+                  />
+
+                  <label for="good">
+                    👍 Good
+                  </label>
+
+                </div>
+
+
+                <div class="experience-option">
+
+                  <input
+                    type="radio"
+                    id="average"
+                    name="entry.1422430894"
+                    value="😐 Average"
+                  />
+
+                  <label for="average">
+                    😐 Average
+                  </label>
+
+                </div>
+
+
+                <div class="experience-option">
+
+                  <input
+                    type="radio"
+                    id="poor"
+                    name="entry.1422430894"
+                    value="👎 Poor"
+                  />
+
+                  <label for="poor">
+                    👎 Poor
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- SUGGESTION -->
+
+            <div class="form-group">
+
+              <label for="suggestion">
+                Suggestions or Complaints
+              </label>
+
+              <textarea
+                id="suggestion"
+                name="entry.614622900"
+                placeholder="Tell us what you liked or what we can improve..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+              type="submit"
+              class="submit-btn"
+              id="submitBtn"
+            >
+              Submit Feedback
+            </button>
+
+            <div class="privacy-note">
+              Your feedback is used only to help Decent Restaurant improve.
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <!-- THANK YOU SCREEN -->
+
+        <div
+          class="thank-you"
+          id="thankYou"
+        >
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h2>
+            Thank You!
+          </h2>
+
+          <p>
+            We really appreciate you taking the time
+            to share your feedback with us.
+          </p>
+
+          <p class="small">
+            Your feedback helps Decent Restaurant serve you better.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <footer class="footer">
+        © Decent Restaurant
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <script>
+
+    /*
+      GOOGLE FORM CONNECTION
+
+      Your Google Form:
+      https://docs.google.com/forms/d/e/1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw/viewform
+
+      Responses are submitted to Google Forms using the
+      corresponding entry IDs from your form.
+    */
+
+    const GOOGLE_FORM_URL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSepbetoMVUwTz1KJFYvXuXevrYyLQNJTqor5WIiUWHMIbreyw/formResponse";
+
+
+    const form =
+      document.getElementById("feedbackForm");
+
+    const submitBtn =
+      document.getElementById("submitBtn");
+
+    const feedbackSection =
+      document.getElementById("feedbackSection");
+
+    const thankYou =
+      document.getElementById("thankYou");
+
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      /*
+        Basic mobile number validation.
+        Since mobile number is optional, we only validate it
+        if the customer enters something.
+      */
+
+      const mobile =
+        document.getElementById("mobile").value.trim();
+
+      if (mobile !== "" && !/^[0-9]{10}$/.test(mobile)) {
+
+        alert("Please enter a valid 10-digit mobile number.");
+
+        return;
+
+      }
+
+
+      /*
+        Disable button so the customer cannot accidentally
+        submit multiple times.
+      */
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent = "Sending...";
+
+
+      /*
+        Create FormData from our custom form.
+      */
+
+      const formData =
+        new FormData(form);
+
+
+      /*
+        Send the information directly to Google Forms.
+
+        "no-cors" is required because Google Forms is on
+        a different domain.
+      */
+
+      fetch(
+        GOOGLE_FORM_URL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        }
+      )
+      .then(function() {
+
+        /*
+          Google Forms does not return a readable response
+          because of browser security.
+
+          Therefore, after the request is sent, we show
+          our own thank-you screen.
+        */
+
+        feedbackSection.style.display = "none";
+
+        thankYou.style.display = "block";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      })
+      .catch(function(error) {
+
+        console.error(error);
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent = "Submit Feedback";
+
+        alert(
+          "Something went wrong. Please check your internet connection and try again."
+        );
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
